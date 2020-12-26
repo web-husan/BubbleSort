@@ -2,10 +2,32 @@
 //
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+#define Size 10
+
+using namespace std;
+
+void before(int *a, int s) {
+    for (int i = 0; i < s; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int A[Size], tmp;
+    //初始化隨機程式
+    srand(time(NULL));
+    
+    for (int i = 0; i < Size; i++) {
+        A[i] = rand() % 1000 + 1;
+    }
+
+    cout << "排序前" << endl;
+    before(A, Size);
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
